@@ -9,7 +9,7 @@ const sendRequestToMistralAi = async (text) => {
         const response = await axios.post(
             API_URL,
             {
-                model: 'mistral-tiny',
+                model: 'mistral-large-latest',
                 messages: [
                     {
                         role: 'system',
