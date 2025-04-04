@@ -9,12 +9,10 @@ const bot = new TelegramBot(token, { polling: true })
 
 process.on('unhandledRejection', (err) => {
     console.error('UNHANDLED REJECTION', err);
-    // Не падаем, а логируем и продолжаем
 });
 
 process.on('uncaughtException', (err) => {
     console.error('UNCAUGHT EXCEPTION', err);
-    // Критичные ошибки: завершаем процесс (система оркестрации перезапустит)
     if (isCriticalError(err)) process.exit(1);
 });
 
